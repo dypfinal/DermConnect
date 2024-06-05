@@ -23,16 +23,16 @@
   <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png'%}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>Hospital Management System</title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="{% static 'assets/css/material-dashboard.css'%}" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style media="screen">
-    
-    
     .market-update-block {
       padding: 2em 2em;
       background: #999;
@@ -159,62 +159,63 @@
     .market-update-left {
       padding: 0px;
     }
+
     .column {
-  float: left;
-  width: 25%;
-  padding: 20px;
-}
+      float: left;
+      width: 25%;
+      padding: 20px;
+    }
 
 
-.row {margin: 0 -10px;
-padding-left: 15px;
-padding-right: 15px;}
+    .row {
+      margin: 0 -10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-th {
-    border: 1px solid #28acea;
-    border-collapse: collapse;
-    padding:10px;
-}
+    th {
+      border: 1px solid #28acea;
+      border-collapse: collapse;
+      padding: 10px;
+    }
 
-td {
-    border: 1px solid #28acea;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    padding:10px;
-}
-
-
-    </style>
+    td {
+      border: 1px solid #28acea;
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+    }
+  </style>
   <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
       var dragTheme = window.localStorage.getItem('checkbox');
-      if(dragTheme==="true"){
+      if (dragTheme === "true") {
         $("#jhamela").removeClass("darkEdition");
-          window.localStorage.setItem('checkbox', true);
-          var dragTheme = window.localStorage.getItem('checkbox');
-          console.log(dragTheme);
-          $("#checkbox").click();
+        window.localStorage.setItem('checkbox', true);
+        var dragTheme = window.localStorage.getItem('checkbox');
+        console.log(dragTheme);
+        $("#checkbox").click();
       }
-      $("#checkbox").click(function(){
-        if($('#checkbox').prop("checked")){
+      $("#checkbox").click(function () {
+        if ($('#checkbox').prop("checked")) {
           $("#jhamela").removeClass("darkEdition");
           window.localStorage.setItem('checkbox', true);
           var dragTheme = window.localStorage.getItem('checkbox');
-          console.log(dragTheme); 
+          console.log(dragTheme);
         }
-        else{
+        else {
           $("#jhamela").addClass("darkEdition");
           window.localStorage.setItem('checkbox', false);
           var dragTheme = window.localStorage.getItem('checkbox');
-          console.log(dragTheme); 
+          console.log(dragTheme);
         }
       });
     });
@@ -222,188 +223,191 @@ td {
 </head>
 
 <body id="jhamela" class="darkEdition lightEdition">
-{% include "hospital/Home/preloader.html" %}
+  {% include "hospital/Home/preloader.html" %}
 
   <div id="myDiv" class="animate-bottom wrapper" style="display:none;text-align: center;position: relative;">
-    <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'assets/img/sidebar-2.jpg'%}">
+    <div class="sidebar" data-color="azure" data-background-color="black"
+      data-image="{% static 'assets/img/sidebar-2.jpg'%}">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
     -->
-    <div class="logo"><a href="#" class="simple-text logo-normal">
-      <img src="https://www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png">
-      <br> 
-      GROUP 20
-      </a></div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-        
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'profile_pat.html' %}">
-            <i class="material-icons">person</i>
-            <p>Profile</p>
-          </a>
-        </li>
-        <li class="nav-item active  ">
-          <a class="nav-link" href="{% url 'bookapp.html' %}">
-            <i class="material-icons">content_paste</i>
-            <p>Book Appointment</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'admit_details.html' %}">
-            <i class="material-icons">content_paste</i>
-            <p>Admit Details</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'yourhealth.html' %}">
-            <i class="material-icons">favorite</i>
-            <p>Your Health</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'calladoc.html' %}">
-            <i class="material-icons">library_books</i>
-            <p>Call A Doc</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'medicalreport.html' %}">
-            <i class="material-icons">favorite</i>
-            <p>Medical Reports</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'feedback.html' %}">
-            <i class="material-icons">bubble_chart</i>
-            <p>Feedback</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'logout' %}">
-            <i class="material-icons">logout</i>
-            <p>Logout</p>
-          </a>
-        </li>
-      </ul>
+      <div class="logo"><a href="#" class="simple-text logo-normal">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bZZ2e_RSTr41_DGwmRGalT9WAvFZQrFlRw&s">
+          <br>
+          GROUP 26
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'profile_pat.html' %}">
+              <i class="material-icons">person</i>
+              <p>Profile</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'bookapp.html' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Book Appointment</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'admit_details.html' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Admit Details</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'yourhealth.html' %}">
+              <i class="material-icons">favorite</i>
+              <p>Your Health</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'calladoc.html' %}">
+              <i class="material-icons">library_books</i>
+              <p>Call A Doc</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'medicalreport.html' %}">
+              <i class="material-icons">favorite</i>
+              <p>Medical Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'feedback.html' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>Feedback</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'logout' %}">
+              <i class="material-icons">logout</i>
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
     <h2 class="sps">Appointment Details</h2>
-      <!-- Navbar -->
-     
-      <!-- End Navbar -->
-      <br><br><br><br><br>
-       <div class="main-panel">
-      
-    
-  <div class="market-updates" style="margin-left: 10%">
-    <div class="col-md-4 market-update-gd" >
-      <div class="market-update-block clr-block-1 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Doctor Name</h4>
-           <h3>{{app.0}}</h3>
+    <!-- Navbar -->
+
+    <!-- End Navbar -->
+    <br><br><br><br><br>
+    <div class="main-panel">
+
+
+      <div class="market-updates" style="margin-left: 10%">
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-1 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Doctor Name</h4>
+              <h3>{{app.0}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-user-o"> </i>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
         </div>
-        <div class="col-md-4 market-update-right">
-          <i class="fa fa-user-o"> </i>
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-2 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Appointment Date</h4>
+              <h3>{{app.2}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </div>
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-3 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Link</h4>
+              <h3>{{app.3}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
         </div>
         <div class="clearfix"> </div>
       </div>
-    </div>
-    <div class="col-md-4 market-update-gd">
-      <div class="market-update-block clr-block-2 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Appointment Date</h4>
-           <h3>{{app.2}}</h3>
+
+
+      <br><br><br>
+
+
+
+      <div class="market-updates" style="margin-left: 10%">
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-1 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Patient Name</h4>
+              <h3>{{app.1}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-user-o"> </i>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
         </div>
-        <div class="col-md-4 market-update-right">
-         <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-2 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Description</h4>
+              <h3>{{app.5}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-list-alt"></i>
+
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </div>
+        <div class="col-md-4 market-update-gd">
+          <div class="market-update-block clr-block-3 column">
+            <div class="col-md-8 market-update-left">
+              <h3></h3>
+              <h4>Call Time</h4>
+              <h3>{{app.4}}</h3>
+            </div>
+            <div class="col-md-4 market-update-right">
+              <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
         </div>
         <div class="clearfix"> </div>
       </div>
-    </div>
-    <div class="col-md-4 market-update-gd">
-      <div class="market-update-block clr-block-3 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Link</h4>
-           <h3>{{app.3}}</h3>
-        </div>
-        <div class="col-md-4 market-update-right">
-          <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
-
-
-  <br><br><br>
 
 
 
-  <div class="market-updates" style="margin-left: 10%">
-    <div class="col-md-4 market-update-gd">
-      <div class="market-update-block clr-block-1 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Patient Name</h4>
-           <h3>{{app.1}}</h3>
-        </div>
-        <div class="col-md-4 market-update-right">
-           <i class="fa fa-user-o"> </i>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-    <div class="col-md-4 market-update-gd">
-      <div class="market-update-block clr-block-2 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Description</h4>
-           <h3>{{app.5}}</h3>
-        </div>
-        <div class="col-md-4 market-update-right">
-          <i class="fa fa-list-alt"></i>
-           
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-    <div class="col-md-4 market-update-gd">
-      <div class="market-update-block clr-block-3 column">
-        <div class="col-md-8 market-update-left">
-          <h3></h3>
-          <h4>Call Time</h4>
-           <h3>{{app.4}}</h3>
-        </div>
-        <div class="col-md-4 market-update-right">
-          <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
 
-      
-      
-    
-        <br><br><br>
-        <a class="btn btn-primary btn-round btn-lg" href="{% url 'report_apt.html' app.6 %}" target="_blank"><b>View Medical Report</b></a>
-        <a class="btn btn-primary btn-round btn-lg" href="{% url 'bill_apt.html' app.6 %}" target="_blank"><b>View Bill</b></a>
-    
+      <br><br><br>
+      <a class="btn btn-primary btn-round btn-lg" href="{% url 'report_apt.html' app.6 %}" target="_blank"><b>View
+          Medical Report</b></a>
+      <a class="btn btn-primary btn-round btn-lg" href="{% url 'bill_apt.html' app.6 %}" target="_blank"><b>View
+          Bill</b></a>
 
 
 
-      
-      
-      
-      
+
+
+
+
+
       <br><br><br><br><br><br><br>
       {% include "hospital/Patient/footer.html" %}
     </div>
@@ -427,8 +431,8 @@ td {
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="{% static 'assets/demo/demo.js' %}"></script>
   <script>
-    $(document).ready(function() {
-      $().ready(function() {
+    $(document).ready(function () {
+      $().ready(function () {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -439,7 +443,7 @@ td {
 
         window_width = $(window).width();
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
           // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
           if ($(this).hasClass('switch-trigger')) {
             if (event.stopPropagation) {
@@ -450,7 +454,7 @@ td {
           }
         });
 
-        $('.fixed-plugin .active-color span').click(function() {
+        $('.fixed-plugin .active-color span').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).siblings().removeClass('active');
@@ -471,7 +475,7 @@ td {
           }
         });
 
-        $('.fixed-plugin .background-color .badge').click(function() {
+        $('.fixed-plugin .background-color .badge').click(function () {
           $(this).siblings().removeClass('active');
           $(this).addClass('active');
 
@@ -482,7 +486,7 @@ td {
           }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
           $full_page_background = $('.full-page-background');
 
           $(this).parent('li').siblings().removeClass('active');
@@ -492,7 +496,7 @@ td {
           var new_image = $(this).find("img").attr('src');
 
           if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-            $sidebar_img_container.fadeOut('fast', function() {
+            $sidebar_img_container.fadeOut('fast', function () {
               $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
               $sidebar_img_container.fadeIn('fast');
             });
@@ -501,7 +505,7 @@ td {
           if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
             var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-            $full_page_background.fadeOut('fast', function() {
+            $full_page_background.fadeOut('fast', function () {
               $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
               $full_page_background.fadeIn('fast');
             });
@@ -520,7 +524,7 @@ td {
           }
         });
 
-        $('.switch-sidebar-image input').change(function() {
+        $('.switch-sidebar-image input').change(function () {
           $full_page_background = $('.full-page-background');
 
           $input = $(this);
@@ -552,7 +556,7 @@ td {
           }
         });
 
-        $('.switch-sidebar-mini input').change(function() {
+        $('.switch-sidebar-mini input').change(function () {
           $body = $('body');
 
           $input = $(this);
@@ -567,7 +571,7 @@ td {
 
             $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('body').addClass('sidebar-mini');
 
               md.misc.sidebar_mini_active = true;
@@ -575,12 +579,12 @@ td {
           }
 
           // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
+          var simulateWindowResize = setInterval(function () {
             window.dispatchEvent(new Event('resize'));
           }, 180);
 
           // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
+          setTimeout(function () {
             clearInterval(simulateWindowResize);
           }, 1000);
 
@@ -589,7 +593,7 @@ td {
     });
   </script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
 

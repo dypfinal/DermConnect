@@ -9,7 +9,7 @@ This medical kiosk management application is designed to enhance the efficiency 
 
 ### Prerequisites:
 - Python 3.8+
-- Django 3.x
+- Django 3.
 - Pip
 
 ### Installation Steps:

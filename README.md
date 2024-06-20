@@ -1,5 +1,5 @@
 
-# Medical Kiosk Management Application
+# Doctor Appointment Management Application
 
 ## Overview
 

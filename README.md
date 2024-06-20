@@ -32,9 +32,9 @@ This medical kiosk management application is designed to enhance the efficiency 
     python manage.py migrate
     \`\`\`
 5. **Run the Development Server:**
-    \`\`\`sh
+    ```sh
     python manage.py runserver
-    \`\`\`
+    ```
 
 ## Key Features
 
@@ -66,4 +66,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any inquiries or issues, please contact [your_email@example.com].
+For any inquiries or issues, please contact [dypfinal@gmail.com].

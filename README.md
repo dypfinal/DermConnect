@@ -14,23 +14,23 @@ This medical kiosk management application is designed to enhance the efficiency 
 
 ### Installation Steps:
 1. **Navigate to the Project Directory**
-    \`\`\`sh
+    ```sh
     cd project_name
-    \`\`\`
+    ```
 2. **Create and Activate Virtual Environment**
-    \`\`\`sh
+    ```sh
     python -m venv env 
     env\Scripts\activate.bat  # On Windows
     source env/bin/activate   # On Unix or MacOS
-    \`\`\`
+    ```
 3. **Install Dependencies:**
-    \`\`\`sh
+    ```sh
     pip install -r requirements.txt
-    \`\`\`
+    ```
 4. **Apply Migrations:**
-    \`\`\`sh
+    ```sh
     python manage.py migrate
-    \`\`\`
+    ```
 5. **Run the Development Server:**
     ```sh
     python manage.py runserver

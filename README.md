@@ -1,5 +1,5 @@
 
-# Doctor Appointment Management Application
+# DermConnect: Linking Care Worldwide
 
 ## Overview
 
